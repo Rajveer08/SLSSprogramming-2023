@@ -1,0 +1,64 @@
+import random
+chatON = True
+firstinput = (" ")
+forward = [
+  "That's interesting, could you tell me more about it? ",
+  "I see your point, but have you considered the alternative perspective? ",
+  "I'm curious, what led you to that conclusion? ",
+  "Let's delve deeper into this topic. What are your thoughts on the implications? ",
+  "That reminds me of something similar I experienced. Have you ever encountered a similar situation? ",
+  "I'm not quite sure I understand. Can you clarify that point for me? ",
+  "What other factors do you think could influence this situation? ",
+  "I'd love to hear your ideas on how we can overcome this challenge. ",
+  "Do you have any suggestions on how we can move forward with this project? "
+]
+ask = [
+  "Is there anything I can do to assist you? ",
+  "Is there something specific you're looking for? ",
+  "Can I be of any assistance to you? ",
+  "Do you require any support or guidance? ",
+  "Is there anything you need me to get for you? ",
+  "Are you in need of any resources or materials? ",
+  "Can I lend a hand with anything? ",
+  "Do you have any requests or requirements? ",
+  "Is there anything else I can offer you? "
+]
+answerQ = [
+  "I'm sorry, but I'm at a loss for words in response to that.",
+  "I'm honestly not sure how to address that question or comment.",
+  "I'm afraid I don't have a suitable response for that at the moment.",
+  "I'm feeling a bit stumped as to how to reply to that.",
+  "That's a difficult question, and I don't have an immediate answer.",
+  "I'm drawing a blank on how to respond to what you just said.",
+  "I'm sorry, but I don't have the information or knowledge to provide a response.",
+  "I'm not sure how to best answer that question.",
+  "I'm unable to come up with a fitting response to that statement.",
+  "I'm sorry, but I'm speechless in regard to your question or statement."
+]
+questions = [
+  "Who", "What", "When", "Where", "Why", "How", "Can", "Will", "Would",
+  "Should", "Is", "Are", "Do", "Does", "Could", "Did", "Have", "Has", "May",
+  "Might"
+]
+#asks your name
+asking = random.choice(ask)
+yourname = input("what is your name? ")
+#if you dont put anything
+if yourname == "":
+  yourname = "n/a"
+elif yourname == " ":
+  yourname = "n/a"
+#ask you question
+firstinput = input(yourname + (", ") + asking).strip().split(" ")
+while chatON == True:
+    asking = random.choice(ask)
+    answer = random.choice(forward)
+    answertoQ = random.choice(answerQ)
+#checks if your asking a question
+    if firstinput[0].capitalize() in questions:
+
+        print(yourname + (", ") + answertoQ)
+        firstinput = input(asking).strip().split(" ")
+    else:
+
+        firstinput = input(yourname + (", ") + answer).strip().split(" ")
