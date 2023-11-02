@@ -8,6 +8,7 @@ bubblequeen=0
 #ask the user what their fave bbt place is
 print("whats your favorite bubble tea place?")
 fave_bbt= input().strip(",.?!").lower()
+
 #tallying/counting algo
 #options:coco chatime suntea xing fu bubble queen
 #if they say coco increse cpunter
